@@ -24,7 +24,9 @@ expo start
 ```
 
 ### Built With
+
 React Native - JavaScript framework
+
 ORMOUS - Site where you can buy watch
 
 ### Author
