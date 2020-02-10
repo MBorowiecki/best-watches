@@ -3,8 +3,6 @@ import { View, Text, Button, Image, ScrollView, ImageBackground, StatusBar } fro
 import styled from 'styled-components';
 import { slides, discoverWatches } from '../data/watches';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import firebase from 'firebase';
-import firebaseConfig from '../config/firebase';
 
 import Header from './components/Header';
 import Slider from './components/Slider';
@@ -20,12 +18,6 @@ const Container = styled.View`
 const HomeDrawer = createDrawerNavigator();
 
 const HomeContent = ({navigation}) => {
-
-    useEffect(() => {
-        if(firebase.apps.length <= 0){
-            let app = firebase.initializeApp(firebaseConfig);
-        }
-    }, [])
 
     return(
         <Container>

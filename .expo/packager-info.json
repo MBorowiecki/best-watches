@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 5820,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "packagerPid": 6744,
+  "expoServerNgrokUrl": "https://tx-tyb.murawus.clock.exp.direct",
+  "packagerNgrokUrl": "https://packager.tx-tyb.murawus.clock.exp.direct",
+  "ngrokPid": 2120,
   "webpackServerPort": 19006
 }
