@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import { View, Text, ImageBackground, TouchableNativeFeedback } from 'react-native';
+import { View, Text, ImageBackground, TouchableNativeFeedback, StatusBar } from 'react-native';
 import styled from 'styled-components';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import { useDispatch } from 'react-redux';
 
 const Container = styled.View`
     background-color: #ffffff;
@@ -60,21 +61,28 @@ const BuyText = styled.Text`
 
 const BackIcon = styled(Icon)`
     margin-top: 40px;
-    margin-left: 20px;
+    margin-left: 10px;
 `
 
 const Watch = ({route, navigation}) => {
     const watchObject = route.params.watch;
+    const dispatch = useDispatch();
+
+    const addWatch = watch => dispatch({
+            type: "ADD_WATCH",
+            watch: watch
+    })
 
     return(
         <Container>
+            <StatusBar barStyle="light-content" />
             <WatchImage 
                 source={{uri: watchObject.imgUrl}}
             >
                 <TouchableNativeFeedback
                     onPress={() => navigation.goBack()}
                 >
-                    <BackIcon name="angle-left" size={40} color="#000000" />
+                    <BackIcon name="keyboard-arrow-left" size={40} color="#000000" />
                 </TouchableNativeFeedback>
             </WatchImage>
             <Content>
@@ -88,7 +96,11 @@ const Watch = ({route, navigation}) => {
                     {watchObject.description}
                 </WatchDescription>
                 <BottomContainer>
-                    <TouchableNativeFeedback>
+                    <TouchableNativeFeedback
+                        onPress={() => {
+                            addWatch(watchObject);
+                        }}
+                    >
                         <BuyButton>
                             <BuyText>
                                 BUY NOW

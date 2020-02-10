@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Image, Text, TouchableWithoutFeedback } from 'react-native';
 import styled from 'styled-components';
+import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
 
 const HeaderContainer = styled.View`
     padding: 30px;
@@ -24,7 +25,7 @@ const HeaderTitle = styled.Text`
 `
 
 const SearchIcon = styled.Image`
-
+    opacity: 0;
 `
 
 const Header = (props) => {
@@ -35,7 +36,8 @@ const Header = (props) => {
                     props.navigation.openDrawer();
                 }}
             >
-                <Hamburger source={require("../../assets/hamburger.png")} />
+                {/*<Hamburger source={require("../../assets/hamburger.png")} />*/}
+                <MaterialIcon name="menu" size={25} />
             </TouchableWithoutFeedback>
             <HeaderTitle>{props.title}</HeaderTitle>
             <SearchIcon source={require("../../assets/search.png")} />
